@@ -14,7 +14,7 @@ public class DiscountService {
         }
     }
 
-    public double calculateStandardDiscount(double price) {
+    private double calculateStandardDiscount(double price) {
         if (price > 1000) {
             return applyDiscount(price, 0.1);
         } else {
