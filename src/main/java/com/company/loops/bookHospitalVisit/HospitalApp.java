@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class HospitalApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Hospital hospital = new Hospital();
+//        Hospital hospital = new Hospital();
 
+        Hospital hospital = Hospital.getHospitalInstance();
+        Hospital hospital2 = Hospital.getHospitalInstance();
         runApp(scanner, hospital);
     }
 
