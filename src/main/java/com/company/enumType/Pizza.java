@@ -1,0 +1,38 @@
+package com.company.enumType;
+
+public enum Pizza {
+    MARGHERITA(true, true, false, false),
+    CAPRICIOSA(true, true, true, false),
+    PROSCIUTTO(true, true, false, true);
+
+    private final boolean tomatoSauce;
+    private final boolean cheese;
+    private final boolean mushrooms;
+    private final boolean ham;
+
+    Pizza(boolean tomatoSauce, boolean cheese, boolean mushrooms, boolean ham) {
+        this.tomatoSauce = tomatoSauce;
+        this.cheese = cheese;
+        this.mushrooms = mushrooms;
+        this.ham = ham;
+    }
+
+    @Override
+    public String toString() {
+        String description = name() + "(";
+        if (tomatoSauce) {
+            description += "tomato sauce";
+        }
+        if (cheese) {
+            description += ", cheese";
+        }
+        if (mushrooms) {
+            description += ", mushrooms";
+        }
+        if (ham) {
+            description += ", ham";
+        }
+        description += ")";
+        return description;
+    }
+}
