@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class StringBuilder {
+public class StringBuilderFirst {
     public static void main(String[] args) {
         List<String> wordsProvided = new ArrayList<>();
         List<String> stringFromLastLetters = new ArrayList<>();
