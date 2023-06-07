@@ -9,11 +9,11 @@ public class Square implements Shape {
 
     @Override
     public double calculateArea() {
-        return 0;
+        return a*a;
     }
 
     @Override
     public double calculatePerimeter() {
-        return 0;
+        return a + a + a + a;
     }
 }
