@@ -1,6 +1,6 @@
 package com.company.filesReadingAndWriting;
 
-public class Person {
+public abstract class Person {
     private String name;
     private String surname;
 
