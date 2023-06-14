@@ -1,8 +1,9 @@
 package com.company.filesReadingAndWriting;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Company {
+public class Company implements Serializable {
 
     public final int MAX_EMPLOYEES = 3;
     private Person[] employees;

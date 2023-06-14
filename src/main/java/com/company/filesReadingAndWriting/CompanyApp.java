@@ -1,7 +1,6 @@
 package com.company.filesReadingAndWriting;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CompanyApp {
@@ -9,50 +8,72 @@ public class CompanyApp {
     static Scanner scanner = new Scanner(System.in);
     static String fileName = "src/main/java/com/company/filesReadingAndWriting/company.txt";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         Company company = createCompany();
         writeFile(company);
 
         System.out.println("Press 'r' to read from the file the list of employees.");
-        String r  = scanner.nextLine();
-        if(r.equals("r")){
-            readFile();
+        String r = scanner.nextLine();
+        if (r.equals("r")) {
+            Company companyFromFile = readFile();
+            System.out.println(companyFromFile);
         }
-
     }
 
     private static void writeFile(Company company) {
         String fileName = "src/main/java/com/company/filesReadingAndWriting/company.txt";
-        try {
-            FileWriter fileWriter = new FileWriter(fileName);
-            BufferedWriter writer = new BufferedWriter(fileWriter);
-
-            writer.write(company.toString());
-            writer.close();
+        try (
+                var fis = new FileOutputStream(fileName);
+                var oos = new ObjectOutputStream(fis);) {
+            oos.writeObject(company);
+            System.out.println("File saved.");
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("File writing failed.");
         }
     }
 
-    private static void readFile() {
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            BufferedReader reader = new BufferedReader(fileReader);
-
-            String nextLine = null;
-            int lines = 0;
-            while ((nextLine = reader.readLine()) != null) {
-                System.out.println(nextLine);
-                lines++;
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("File writing failed.");
+    private static Company readFile() throws IOException, ClassNotFoundException {
+        try (
+                var fis = new FileInputStream(fileName);
+                var ois = new ObjectInputStream(fis);
+        ){
+            return (Company) ois.readObject();
         }
     }
+
+//    private static void writeFile(Company company) {
+//        String fileName = "src/main/java/com/company/filesReadingAndWriting/company.txt";
+//        try {
+//            FileWriter fileWriter = new FileWriter(fileName);
+//            BufferedWriter writer = new BufferedWriter(fileWriter);
+//
+//            writer.write(company.toString());
+//            writer.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            System.out.println("File writing failed.");
+//        }
+//    }
+
+//    private static void readFile() {
+//        try {
+//            FileReader fileReader = new FileReader(fileName);
+//            BufferedReader reader = new BufferedReader(fileReader);
+//
+//            String nextLine = null;
+//            int lines = 0;
+//            while ((nextLine = reader.readLine()) != null) {
+//                System.out.println(nextLine);
+//                lines++;
+//            }
+//            reader.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            System.out.println("File writing failed.");
+//        }
+//    }
 
     static Company createCompany() {
         Company company = new Company();

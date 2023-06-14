@@ -19,9 +19,9 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "Employee{" + "name = " + super.getName() + ", " +
+        return "Employee {" + "name = " + super.getName() + ", " +
                 "surname = " + super.getSurname() + ", " +
                 "salary = " + this.salary +
-                '}';
+                "$}";
     }
 }
