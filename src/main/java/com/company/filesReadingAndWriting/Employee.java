@@ -1,6 +1,6 @@
 package com.company.filesReadingAndWriting;
 
-public class Employee extends Person{
+public class Employee extends Person {
 
     private int salary;
 
@@ -10,10 +10,18 @@ public class Employee extends Person{
     }
 
     public int getSalary() {
-        return salary;
+        return this.salary;
     }
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "name = " + super.getName() + ", " +
+                "surname = " + super.getSurname() + ", " +
+                "salary = " + this.salary +
+                '}';
     }
 }

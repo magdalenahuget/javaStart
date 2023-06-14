@@ -1,0 +1,3 @@
+Employee{name = a, surname = b, salary = 1}
+Employee{name = d, surname = g, salary = 2}
+Employee{name = g, surname = h, salary = 3}
