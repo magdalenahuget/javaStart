@@ -1,32 +1,46 @@
 package com.company.collectionsLists;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-
 public class SumNumbers {
-    static Scanner scanner = new Scanner(System.in);
+    public static final String EXIT = "exit";
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        collectNumbers();
+        List<Double> numbers = new ArrayList<>();
+        fillList(numbers);
+        printData(numbers);
     }
 
-    public static void collectNumbers() {
-        String input;
-        int sum = 0;
-        StringBuilder turboString = new StringBuilder();
+    static void fillList(List<Double> list) {
+        System.out.println("Please provide the number to sum (or type \"exit\"):");
 
-        System.out.println("Hello, please provide numbers to sum. If you provided all, please type 'exit'.");
-        do {
-            System.out.println("Please provide the number or type 'exit' ");
-            input = scanner.nextLine();
+        String input = scanner.nextLine();
+        if (input.equals(EXIT)){
+            return;
+        }
+        try {
+            Double num = Double.valueOf(input);
+            list.add(num);
+        } catch (NumberFormatException e){
+            System.err.println("Liczba w niepoprawnym formacie");
+        }
+        fillList(list);
+    }
 
-            if (Objects.equals(input, "exit")) {
-                break;
-            }
-            sum += Integer.parseInt(input);
-            turboString.append(input).append(" + ");
-        } while (true);
-        System.out.println(turboString + " = " + sum);
+    static void printData(List<Double> list){
+        StringBuilder stringBuilder = new StringBuilder();
+        double sum = 0;
+        for(double d: list){
+            stringBuilder.append(d);
+            stringBuilder.append(" + ");
+            sum += d;
+        }
+
+        stringBuilder.replace(stringBuilder.length()-2, stringBuilder.length(), "= ");
+        stringBuilder.append(sum);
+        System.out.println(stringBuilder.toString());
     }
 }
