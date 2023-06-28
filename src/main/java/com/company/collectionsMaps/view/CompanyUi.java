@@ -14,7 +14,12 @@ public class CompanyUi {
         System.out.println("Please provide surname:");
         String surname = scanner.nextLine();
         Employee employee = company.getEmployee(name, surname);
-        System.out.println(employee.toString());
+
+        if (employee == null) {
+            System.out.println("Employee not found in the company.");
+        } else {
+            System.out.println(employee.toString());
+        }
     }
 
     public void displayAllEmployees(Company company) {
