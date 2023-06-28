@@ -1,4 +1,9 @@
-package com.company.collectionsMaps;
+package com.company.collectionsMaps.controller;
+
+import com.company.collectionsMaps.model.Company;
+import com.company.collectionsMaps.model.Employee;
+import com.company.collectionsMaps.service.EmployeeService;
+import com.company.collectionsMaps.view.CompanyUi;
 
 import java.util.Scanner;
 
@@ -7,9 +12,9 @@ public class CompanyController {
     Scanner scanner = new Scanner(System.in);
     Company company;
     EmployeeService employeeService;
-    CompanyUI companyUI;
+    CompanyUi companyUI;
 
-    public CompanyController(Company company, EmployeeService employeeService, CompanyUI companyUI) {
+    public CompanyController(Company company, EmployeeService employeeService, CompanyUi companyUI) {
         this.company = company;
         this.employeeService = employeeService;
         this.companyUI = companyUI;

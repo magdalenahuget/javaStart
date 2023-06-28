@@ -1,8 +1,11 @@
-package com.company.collectionsMaps;
+package com.company.collectionsMaps.view;
+
+import com.company.collectionsMaps.model.Company;
+import com.company.collectionsMaps.model.Employee;
 
 import java.util.Scanner;
 
-public class CompanyUI {
+public class CompanyUi {
     Scanner scanner = new Scanner(System.in);
 
     public void displayInfoAboutEmployeeProvided(Company company) {

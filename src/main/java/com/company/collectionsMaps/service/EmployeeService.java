@@ -1,4 +1,7 @@
-package com.company.collectionsMaps;
+package com.company.collectionsMaps.service;
+
+import com.company.collectionsMaps.model.Company;
+import com.company.collectionsMaps.model.Employee;
 
 import java.util.Scanner;
 
@@ -8,8 +11,12 @@ public class EmployeeService {
     public void getUserInputAndAddEmployee(Company company) {
         Employee employee = createEmployeeWithUserInput();
 
-        company.addEmployee(employee);
-        System.out.println("Employee added successfully.");
+        boolean isAlreadyAdded = company.addEmployee(employee);
+        if (isAlreadyAdded) {
+            System.out.println("Employee is already in the company.");
+        } else {
+            System.out.println("Employee added successfully.");
+        }
     }
 
     private Employee createEmployeeWithUserInput() {

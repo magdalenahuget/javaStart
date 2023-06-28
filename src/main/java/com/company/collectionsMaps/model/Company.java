@@ -1,4 +1,6 @@
-package com.company.collectionsMaps;
+package com.company.collectionsMaps.model;
+
+import com.company.collectionsMaps.model.Employee;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.company.collectionsMaps;
+package com.company.collectionsMaps.model;
 
 public class Employee {
     private String name;
