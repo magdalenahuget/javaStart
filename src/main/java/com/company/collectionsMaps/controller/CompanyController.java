@@ -9,10 +9,14 @@ import java.util.Scanner;
 
 public class CompanyController {
 
-    Scanner scanner = new Scanner(System.in);
-    Company company;
-    EmployeeService employeeService;
-    CompanyUi companyUI;
+    private Scanner scanner = new Scanner(System.in);
+    private Company company;
+    private EmployeeService employeeService;
+    private CompanyUi companyUI;
+    private static final int ADD_EMPLOYEE = 1;
+    private static final int FIND_EMPLOYEE = 2;
+    private static final int DISPLAY_EMPLOYEES = 3;
+    private static final int EXIT = 4;
 
     public CompanyController(Company company, EmployeeService employeeService, CompanyUi companyUI) {
         this.company = company;
@@ -31,16 +35,16 @@ public class CompanyController {
             choice = scanner.nextInt();
             scanner.nextLine();
             switch (choice) {
-                case 1:
+                case ADD_EMPLOYEE:
                     employeeService.getUserInputAndAddEmployee(company);
                     break;
-                case 2:
+                case FIND_EMPLOYEE:
                     companyUI.displayInfoAboutEmployeeProvided(company);
                     break;
-                case 3:
+                case DISPLAY_EMPLOYEES:
                     companyUI.displayAllEmployees(company);
                     break;
-                case 4:
+                case EXIT:
                     System.exit(0);
                 default:
                     System.out.println("Wrong input.");
