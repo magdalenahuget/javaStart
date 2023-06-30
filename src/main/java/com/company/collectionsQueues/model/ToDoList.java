@@ -22,8 +22,10 @@ public class ToDoList {
 
     public void display() {
         Queue<Task> toDoList = getToDoList();
+        int counter = 1;
         for (Task task: toDoList) {
-            System.out.println(task);
+            System.out.println(counter + ". " + task.toString());
+            counter++;
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.company.collectionsQueues.controller;
 
-import com.company.collectionsQueues.TaskManager;
+import com.company.collectionsQueues.service.TaskManager;
 import com.company.collectionsQueues.model.Option;
 import com.company.collectionsQueues.model.Priority;
 import com.company.collectionsQueues.model.Task;

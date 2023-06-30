@@ -4,13 +4,11 @@ public class Task implements Comparable<Task> {
     private String name;
     private String description;
     private Priority priority;
-    private int counter;
 
     public Task(String name, String description, Priority priority) {
         this.name = name;
         this.description = description;
         this.priority = priority;
-        this.counter++;
     }
 
     public String getName() {
@@ -39,7 +37,7 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
-        return counter + ". " + name +
+        return  name +
                 " -> " + description +
                 " - priority: " + priority;
     }

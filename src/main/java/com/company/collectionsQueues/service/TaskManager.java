@@ -1,4 +1,4 @@
-package com.company.collectionsQueues;
+package com.company.collectionsQueues.service;
 
 import com.company.collectionsQueues.model.Option;
 import com.company.collectionsQueues.model.Priority;
