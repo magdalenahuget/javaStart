@@ -1,5 +1,8 @@
-package com.company.collectionsQueues;
+package com.company.collectionsQueues.model;
 
 public enum Priority {
-    LOW, MODERATE, HIGH;
+    HIGH,
+    MODERATE,
+    LOW;
 }
+
