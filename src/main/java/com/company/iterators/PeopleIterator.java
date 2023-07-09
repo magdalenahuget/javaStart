@@ -7,6 +7,10 @@ import java.util.TreeMap;
 
 public class PeopleIterator {
     public static void main(String[] args) {
+
+        // Klasa TreeMap dba o sortowanie dodawanych wartości
+        // zgodnie z naturalnym porządkiem kluczy
+
         Map<String, Person> people = new TreeMap<>();
 
         people.put("Bieber", new Person("Justin", "Bieber", 30));
