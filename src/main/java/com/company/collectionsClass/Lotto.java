@@ -24,9 +24,12 @@ public class Lotto {
             for (Integer num : numbers) {
                 if (num.equals(drawnNumbers.get(i))) {
                     matched++;
-                    System.out.println("bingo" + num);
+                    System.out.println("Congrats! You hit number " + num + " !");
                 }
             }
+        }
+        if (matched == 0) {
+            System.out.println("I am sorry you did not hit any number today");
         }
         return matched;
     }
